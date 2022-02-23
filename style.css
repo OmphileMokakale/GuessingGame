@@ -1,5 +1,5 @@
 body {
-	background-color: #f0f7f6;
+	background-color: whitesmoke;
 	color: rgb(8, 12, 11);
 	font-family: "Times New Roman", Times, serif;
 }
@@ -21,7 +21,7 @@ h1{
 
 div {
 	border-radius: 15px;
-	background-color: #9232ca;
+	background-color: #BFDBF7;
 	padding: 20px;
   } 
   
