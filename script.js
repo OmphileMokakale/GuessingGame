@@ -33,10 +33,18 @@ function btnClicked() {
         setTimeout(function() { alert("New game starting!"); }, 100);
       }
 
+      if (guessedNo > 100){
+        message.innerHTML = "Error, Number Cannot be bigger than 100";
+    }
+    else if (guessedNo < 0){
+        message.innerHTML = "Error, Number Cannot be smaller than 0";
+    }
+
       if (count >= 10)
         return;
         count += 1;  
-
+        randomNumber = Math.ceil(Math.random()* 100)
+        
       // console.log("counter:" + count);
       counter.innerHTML = `Chances: ${count}/10`;
 
