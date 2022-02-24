@@ -19,8 +19,6 @@ function btnClicked() {
 
     const guessedNo = Number(GuessNumber.value);
 
-  
-
     if( guessedNo < randomNumber){
       message.innerHTML = "Your guess is too low";
       }
