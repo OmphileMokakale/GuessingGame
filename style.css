@@ -1,7 +1,7 @@
 body {
 	background-color: whitesmoke;
 	color: rgb(8, 12, 11);
-	font-family: "Times New Roman", Times, serif;
+	font-family: "Monaco, Times New Roman", Times, serif;
 }
 
 .container {
@@ -21,6 +21,8 @@ h1{
 
 div {
 	border-radius: 15px;
+	border-style:ridge;
+	border-color: #96C9DC;
 	background-color: #96C9DC;
 	padding: 20px;
   } 

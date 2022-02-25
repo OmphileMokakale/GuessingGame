@@ -1,17 +1,16 @@
 let randomNumber = Math.ceil(Math.random()* 100)
+var count = 0;
+var Score = 0;
 
 
-// const number_guess = document.querySelector(".number_guess");
-// const guess_btn = document.querySelector(".guess_btn");
-// const message = document.querySelector(".message");
 
 const GuessNumber = document.querySelector('.guessNumber')
 const btnGuess = document.querySelector('.btnGuess')
+const btnRefresh = document.querySelector('.btnRefresh')
 const message = document.querySelector('.message')
 const counter = document.querySelector('.counter')
+const points = document.querySelector('.points')
 
-
-var count = 0;
 
 
 function btnClicked() {
@@ -38,44 +37,52 @@ function btnClicked() {
         message.innerHTML = "Error, Number Cannot be smaller than 0";
     }
 
-      if (count >= 10)
+      if (count > 10)
         return;
         count += 1;  
         randomNumber = Math.ceil(Math.random()* 100)
-        
       // console.log("counter:" + count);
       counter.innerHTML = `Chances: ${count}/10`;
+
+
+      if (count <= 3){
+        Score = 50;
+        points.innerHTML = `Score: ${Score}`;
+    }
+    else if(count > 3 && count <=6  ){
+      Score = 20;
+      points.innerHTML = `Score: ${Score}`;
+    }
+    else if(count > 6 && count <=9  ){
+      score = 10;
+      points.innerHTML = `Score: ${Score}`;
+    }
+    else if (count >=10) {
+      // document.body.style.backgroundColor = "red";
+      alert("youve exhasted your chances please refresh and try again");
+        Score = 0;
+        points.innerHTML = `Score: ${Score}`;
+        alert('Try again');
+
+    }
 
       
       setTimeout(function(){
         message.innerHTML = ""
       }, 3000);
-
       
   
 }
 
-
-    //   function guessBtnClicked() {
-    //     const guessedNo = Number(number_guess.value);
-    
-    //     if (guessedNo < randomNumber) {
-    //         message.innerHTML = "Your guess is too low";
-    //     } else if (guessedNo > randomNumber) {
-    //         message.innerHTML = "Your guess is too high";
-    //     } else {
-    //         message.innerHTML =  `Correct, the secret number is ${guessedNo}`;
-    //     }
-    
-    
-    //     setTimeout(function(){
-    //         message.innerHTML = "";
-    //     }, 2000);
-    
-    
-    // }
-    
-    // guess_btn.addEventListener('click', guessBtnClicked)
+function refreshBtnClicked (){
+  randomNumber = Math.ceil(Math.random()* 100)
+  count = 0;
+  Score = 0;
+  counter.innerHTML = `Chances: ${count}/10`;
+  alert("New Number Generated!");
+}
 
 
     btnGuess.addEventListener('click', btnClicked)
+    btnRefresh.addEventListener('click', refreshBtnClicked)
+
