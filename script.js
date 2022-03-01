@@ -204,7 +204,7 @@ var prizeGenerator = function(){
   var prizes =[{name:'Trip To Vegas', text: " Remember What Happens in Vegas stays in Vegas."},
   {name:'Pet', text: " Be sure to feed it twice a day."},
   {name:'Teddy Bear', text: " You're in for some cuddles."},
-  {name:'R10 000', text: ' Because we all want soft life!!'},
+  {name:'10 000', text: ' Because we all want soft life!!'},
   {name:'Lifetime supply of Dogs', text: " Oh snap!" }];
   alert('You win! Click OK to see your prize');
       resetBackground('white');
